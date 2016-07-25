@@ -4,8 +4,7 @@ if Spree.user_class
 
     private
     def mailchimp_sync
-      # TODO use ActiveJob to do this in bg.
-      SolidusMailchimpSync::UserSynchronizer.new(self).sync
+      SolidusMailchimpSync::UserSynchronizer.new(self).maybe_sync_after_commit
     end
   end
 end
