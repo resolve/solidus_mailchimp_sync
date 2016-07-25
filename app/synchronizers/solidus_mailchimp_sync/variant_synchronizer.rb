@@ -1,7 +1,7 @@
 module SolidusMailchimpSync
   class VariantSynchronizer < BaseSynchronizer
     self.serializer_class_name = "::SolidusMailchimpSync::VariantSerializer"
-    # TODO: Price is updated, how do we sync??
+    # Price updates are caught from after commit on Spree::Price
     self.synced_attributes = %w{id sku}
 
     def sync

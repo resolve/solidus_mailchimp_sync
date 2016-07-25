@@ -4,8 +4,6 @@ module SolidusMailchimpSync
   class VariantSerializer
     attr_reader :variant
 
-    # TODO variant visibility
-    # TODO image
     def initialize(variant)
       @variant = variant
       unless variant.persisted?

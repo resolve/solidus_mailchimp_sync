@@ -3,7 +3,6 @@ require 'json'
 module SolidusMailchimpSync
   # Intentionally does not sync images, let variants do that.
   #
-  # TODO: Need URLs.
   class ProductSerializer
     attr_reader :product
 
