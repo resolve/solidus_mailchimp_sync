@@ -8,7 +8,6 @@ module SolidusMailchimpSync
         copy_file "config/initializers/solidus_mailchimp_sync.rb"
       end
 
-
       def add_migrations
         run 'bundle exec rake railties:install:migrations FROM=solidus_mailchimp_sync'
       end

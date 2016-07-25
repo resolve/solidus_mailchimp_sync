@@ -16,5 +16,4 @@ module SolidusMailchimpSync
       end
     end
   end
-
 end

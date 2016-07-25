@@ -30,9 +30,8 @@ describe SolidusMailchimpSync::ProductSynchronizer do
         syncer = SolidusMailchimpSync::ProductSynchronizer.new(product)
         response = syncer.sync
 
-        expect( response.all? {|v| v["title"] == "NEW NAME"})
+        expect( response.all? { |v| v["title"] == "NEW NAME" })
       end
     end
-
   end
 end

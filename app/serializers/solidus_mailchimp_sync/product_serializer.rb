@@ -36,6 +36,5 @@ module SolidusMailchimpSync
     def to_json
       JSON.dump(as_json)
     end
-
   end
 end

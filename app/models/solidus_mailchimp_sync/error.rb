@@ -25,7 +25,7 @@ module SolidusMailchimpSync
     end
 
     def constructed_message
-      errors = response_hash.try {|h| h["errors"] }.to_s.presence
+      errors = response_hash.try { |h| h["errors"] }.to_s.presence
       [status, title, detail, errors].compact.join(': ')
     end
   end

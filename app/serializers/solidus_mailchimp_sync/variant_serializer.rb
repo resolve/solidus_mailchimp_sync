@@ -19,7 +19,8 @@ module SolidusMailchimpSync
         title: title,
         sku: variant.sku,
         price: variant.price.to_f,
-        visiiblity: true
+
+        visiiblity: visibility
       }
 
       url = self.url
@@ -36,7 +37,7 @@ module SolidusMailchimpSync
     end
 
     def title
-      [variant.product.name, variant.options_text].delete_if {|a| a.blank? }.join(':')
+      [variant.product.name, variant.options_text].delete_if { |a| a.blank? }.join(':')
     end
 
     # Override in custom serializer for custom front-end url
@@ -51,5 +52,9 @@ module SolidusMailchimpSync
       (variant.images.first || variant.product.images.first).try(:url)
     end
 
+    # Override for custom visibility.
+    def visibility
+      variant.product.available?
+    end
   end
 end
