@@ -14,6 +14,8 @@ module SolidusMailchimpSync
       end
     end
 
+    # We don't include image or url, variants can have those anyway,
+    # and variants are actually editable, do it there.
     def as_json
       {
         id: product.id.to_s,

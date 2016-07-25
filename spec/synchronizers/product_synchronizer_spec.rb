@@ -14,6 +14,11 @@ describe SolidusMailchimpSync::ProductSynchronizer do
 
       expect(response["id"]).to eq(product.id.to_s)
       expect(response["title"]).to eq(product.name)
+      expect(
+        response["variants"].all? do |v|
+          v["url"] == spree.product_path(product, host: Rails.application.routes.default_url_options[:host])
+        end
+      )
     end
 
     describe "existing product sync" do
