@@ -4,7 +4,7 @@ if Spree.user_class
 
     private
     def mailchimp_sync
-      SolidusMailchimpSync::UserSynchronizer.new(self).maybe_sync_after_commit
+      SolidusMailchimpSync::UserSynchronizer.new(self).auto_sync
     end
   end
 end

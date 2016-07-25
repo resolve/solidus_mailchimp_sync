@@ -3,6 +3,6 @@ Spree::Product.class_eval do
 
   private
   def mailchimp_sync
-    SolidusMailchimpSync::ProductSynchronizer.new(self).maybe_sync_after_commit
+    SolidusMailchimpSync::ProductSynchronizer.new(self).auto_sync
   end
 end

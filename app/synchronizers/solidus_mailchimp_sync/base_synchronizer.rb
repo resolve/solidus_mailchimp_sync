@@ -22,7 +22,7 @@ module SolidusMailchimpSync
 
     # Designed to be called in an after commit hook, syncs in bg, if
     # neccessary.
-    def maybe_sync_after_commit(force: false)
+    def auto_sync(force: false)
       if auto_sync_enabled && (force || should_sync?)
         SolidusMailchimpSync::SyncJob.perform_later(self.class.name, model)
       end
