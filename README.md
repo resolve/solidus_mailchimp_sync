@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/friendsoftheweb/solidus_mailchimp_sync.svg?branch=master)](https://travis-ci.org/friendsoftheweb/solidus_mailchimp_sync)
+
 SolidusMailchimpSync
 ====================
 
