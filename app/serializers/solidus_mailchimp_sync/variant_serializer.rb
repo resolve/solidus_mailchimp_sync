@@ -19,12 +19,14 @@ module SolidusMailchimpSync
         title: title,
         sku: variant.sku,
         price: variant.price.to_f,
-
         visiiblity: true
       }
 
       url = self.url
       hash[:url] = url if url
+
+      image_url = self.image_url
+      hash[:image_url] = image_url if image_url
 
       hash
     end
@@ -42,6 +44,11 @@ module SolidusMailchimpSync
       if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:product_url)
         Spree::Core::Engine.routes.url_helpers.product_url(variant.product, host: Rails.application.routes.default_url_options[:host])
       end
+    end
+
+    # Override in custom serializer if you want to choose which image different than `first`
+    def image_url
+      (variant.images.first || variant.product.images.first).try(:url)
     end
 
   end
