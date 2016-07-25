@@ -1,40 +1,39 @@
 require 'json'
 
 module SolidusMailchimpSync
-  # in progress
+  # Intentionally does not sync images, let variants do that.
+  #
+  # TODO: Need URLs.
   class ProductSerializer
     attr_reader :product
-    def initializer(product)
+
+    def initialize(product)
       @product = product
-      unless user.persisted?
+      unless product.persisted?
         raise ArgumentError, "Can't serialize a non-saved product: #{product}"
       end
     end
 
     def as_json
       {
-        id: product.id,
+        id: product.id.to_s,
         handle: product.slug,
-        name: product.name,
+        title: product.name,
         description: product.description,
-        image_url: image_url,
-        variants: variants
+        published_at_foreign: product.available_on.iso8601,
+        variants: variants_json
       }
+    end
+
+    def variants_json
+      product.variants_including_master.collect do |variant|
+        VariantSynchronizer.new(variant).serializer.as_json
+      end
     end
 
     def to_json
       JSON.dump(as_json)
     end
 
-    # Override to pick differently
-    def image_url
-      images.first.try do |image|
-        image.attachment.image
-      end
-    end
-
-    def variants
-
-    end
   end
 end

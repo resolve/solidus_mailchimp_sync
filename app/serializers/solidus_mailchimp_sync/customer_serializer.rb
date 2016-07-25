@@ -14,6 +14,8 @@ module SolidusMailchimpSync
     end
 
     def as_json
+      # Note mailchimp does not let us change email address, it won't be updated on
+      # subsequent pushes.
       {
         'id': user.id.to_s,
         'email_address': user.email,

@@ -8,7 +8,7 @@ module SolidusMailchimpSync
     def sync
       if model.deleted?
         delete
-      elsif synced_attributes_changed?
+      else
         put
       end
     end

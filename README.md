@@ -20,6 +20,9 @@ not support multiple Mailchimp Stores.
 
 We do not (yet?) support Mailchimp E-Commerce Link Tracking.
 
+Actual sync'ing is done in background jobs using ActiveJob, configure your
+ActiveJob adapter. All jobs are idempotent.
+
 Installation
 ------------
 
@@ -35,6 +38,11 @@ Bundle your dependencies and run the installation generator:
 bundle
 bundle exec rails g solidus_mailchimp_sync:install
 ```
+
+Your app will need to set `default_url_options[:host]` so urls can be
+sent to mailchimp in background. :
+
+     config.action_mailer.default_url_options = { host: 'mystore.example.org' }
 
 Review the generated `./config/initializers/solidus_mailchimp_sync.rb` for required
 and optional config, including mailchimp api keys.
@@ -56,6 +64,10 @@ First bundle your dependencies, then run `rake`. `rake` will default to building
 bundle
 bundle exec rake
 ```
+
+Some tests use VCR to record live transactions with mailchimp. To run these tests while
+recording new cassettes, you will need to set ENV `MAILCHIMP_API_KEY` and `MAILCHIMP_STORE_ID`.
+**Note** these should be a test/dummy mailchimp account, as data will be edited by tests.
 
 When testing your applications integration with this extension you may use it's factories.
 (No factories at present)

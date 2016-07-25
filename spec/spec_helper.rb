@@ -33,6 +33,18 @@ require 'spree/testing_support/url_helpers'
 # Requires factories defined in lib/solidus_mailchimp_sync/factories.rb
 require 'solidus_mailchimp_sync/factories'
 
+require 'vcr'
+require 'webmock'
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/vcr_cassettes"
+  config.hook_into :webmock # or :fakeweb
+  config.configure_rspec_metadata!
+
+  # Filter out basic auth
+  config.filter_sensitive_data('<OMITTED AUTH HEADER>') { Base64.strict_encode64("#{SolidusMailchimpSync::Mailchimp::AUTH_USER}:#{SolidusMailchimpSync.api_key}") }
+end
+
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
 

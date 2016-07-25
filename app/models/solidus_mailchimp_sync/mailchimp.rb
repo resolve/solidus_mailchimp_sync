@@ -4,15 +4,17 @@ require 'solidus_mailchimp_sync'
 
 module SolidusMailchimpSync
   class Mailchimp
+    AUTH_USER = "ignored"
 
-    def self.request(method, path, body: nil)
+
+    def self.request(method, path, body: '')
       begin
         if SolidusMailchimpSync.api_key.blank?
           raise ArgumentError, "Missing required configuration `SolidusMailchimpSync.api_key`"
         end
 
         url = url(path)
-        response = HTTP.basic_auth(user: "ignored", pass: SolidusMailchimpSync.api_key).
+        response = HTTP.basic_auth(user: AUTH_USER, pass: SolidusMailchimpSync.api_key).
                         request(method.to_sym, url, json: body)
 
         response_hash = JSON.parse(response.body.to_s)
@@ -48,7 +50,7 @@ module SolidusMailchimpSync
         raise ArgumentError, "Missing required configuration `SolidusMailchimpSync.store_id`"
       end
 
-      path = "/ecommerce/store/#{store_id}/" + path.sub(%r{\A/}, '')
+      path = "/ecommerce/stores/#{store_id}/" + path.sub(%r{\A/}, '')
       request(method, path, body: body)
     end
 
