@@ -10,6 +10,10 @@ SolidusMailchimpSync.api_key = ENV['MAILCHIMP_API_KEY']
 # have one, you can create one with `rake solidus_mailchimp_sync:create_store LIST_ID=xxxx`
 SolidusMailchimpSync.store_id = ENV['MAILCHIMP_STORE_ID']
 
+# Disable automatic sync except in production. Feel free to change
+# this is you like.
+SolidusMailchimpSync::BaseSynchronizer.auto_sync_enabled = Rails.env.production?
+
 # Automatic synchronization is done with ActiveJob, use a queue
 # other than :default if you want:
 # SolidusMailchimpSync::SyncJob.use_queue_name = :mailchimp_sync

@@ -7,6 +7,8 @@ module SolidusMailchimpSync
   class BaseSynchronizer
     class_attribute :synced_attributes
     class_attribute :serializer_class_name
+    class_attribute :auto_sync_enabled
+    auto_sync_enabled = true
 
     attr_reader :model
 
@@ -21,7 +23,7 @@ module SolidusMailchimpSync
     # Designed to be called in an after commit hook, syncs in bg, if
     # neccessary.
     def maybe_sync_after_commit(force: false)
-      if force || should_sync?
+      if auto_sync_enabled && (force || should_sync?)
         SolidusMailchimpSync::SyncJob.perform_later(self.class.name, model)
       end
     end
