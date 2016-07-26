@@ -36,7 +36,7 @@ module SolidusMailchimpSync
     end
 
     def should_sync?
-      was_newly_inserted? && synced_attributes_changed?
+      was_newly_inserted? || synced_attributes_changed?
     end
 
     # This gets a lot harder when associations are involved, haven't completely solved it.
