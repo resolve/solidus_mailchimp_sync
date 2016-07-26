@@ -12,6 +12,14 @@ module SolidusMailchimpSync
       raise NameError, "Can't call #path on #{self.class.name}, need `cart_path` or `order_path`"
     end
 
+    def should_sync?
+      model.mailchimp_auto_sync_needed || super
+    end
+
+    def auto_sync(*args)
+      super
+      mailchimp_auto_sync_needed = false
+    end
 
     def sync
       if order_is_cart?
