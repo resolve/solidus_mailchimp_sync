@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: delete
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -12,7 +12,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -27,11 +27,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 3f4d058c-723e-4d7c-9d72-5681f0229ed2
+      - 593378ac-d7ad-49a7-9857-cd7282f25da8
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:03 GMT
+      - Tue, 26 Jul 2016 19:09:03 GMT
       Connection:
       - close
       Set-Cookie:
@@ -41,10 +41,10 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:03 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:03 GMT
 - request:
     method: post
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts
     body:
       encoding: UTF-8
       string: '{"id":"1","customer":{"id":"1"},"currency_code":"USD","order_total":110.0,"tax_total":0.0,"lines":[{"id":"1","product_id":"1","product_variant_id":"1","quantity":1,"price":"10.0"}]}'
@@ -56,7 +56,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -69,30 +69,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3263'
+      - '3265'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - 653cc593-ab92-4b41-9704-5cf5c5a89070
+      - 00d9e57a-cc0c-4b95-ba5a-6b77255d6a94
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:03 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T18:57:04+00:00","updated_at":"2016-07-26T18:57:04+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T19:09:03+00:00","updated_at":"2016-07-26T19:09:03+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:03 GMT
 - request:
     method: get
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -102,7 +102,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -115,30 +115,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3263'
+      - '3265'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - c4ef4533-701c-4473-a6de-e7a52f8d6ca8
+      - 21fccc38-5e07-49d8-b98f-9f2560d16eea
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:03 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T18:57:04+00:00","updated_at":"2016-07-26T18:57:04+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T19:09:03+00:00","updated_at":"2016-07-26T19:09:03+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:03 GMT
 - request:
     method: delete
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
     body:
       encoding: US-ASCII
       string: ''
@@ -148,7 +148,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -163,11 +163,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 1064a14e-1bc9-4e70-9a5f-eef3cd597197
+      - 1f583b09-f72a-4178-8310-a99b704f79f7
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:03 GMT
       Connection:
       - close
       Set-Cookie:
@@ -177,10 +177,10 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:03 GMT
 - request:
     method: post
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts
     body:
       encoding: UTF-8
       string: '{"id":"1","customer":{"id":"1"},"currency_code":"USD","order_total":110.0,"tax_total":0.0,"lines":[{"id":"1","product_id":"1","product_variant_id":"1","quantity":1,"price":"10.0"}]}'
@@ -192,7 +192,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -207,11 +207,11 @@ http_interactions:
       Content-Length:
       - '207'
       X-Request-Id:
-      - d0a45a48-f42e-4d9e-b750-57ecb6588794
+      - 49ce7d35-f43d-4c29-9b14-11b7645cdd3b
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:04 GMT
       Connection:
       - close
       Set-Cookie:
@@ -222,10 +222,10 @@ http_interactions:
         Request","status":400,"detail":"A cart with the provided ID already exists
         in the account.","instance":""}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:04 GMT
 - request:
     method: patch
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: UTF-8
       string: '{"id":"1","customer":{"id":"1"},"currency_code":"USD","order_total":110.0,"tax_total":0.0,"lines":[{"id":"1","product_id":"1","product_variant_id":"1","quantity":1,"price":"10.0"}]}'
@@ -237,7 +237,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -250,30 +250,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3263'
+      - '3265'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - 08daa9cf-b1c1-4549-be26-8bd6f91300ab
+      - f0a1e44f-4b3a-4efd-91e8-0385bdd167cf
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:04 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T18:57:04+00:00","updated_at":"2016-07-26T18:57:04+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T19:09:03+00:00","updated_at":"2016-07-26T19:09:04+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:04 GMT
 - request:
     method: get
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -283,7 +283,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -296,30 +296,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3263'
+      - '3265'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - 2765b526-4d72-4945-9553-4b351c4e1f50
+      - aced74d8-b6d4-460a-baa5-0b288d8f5c14
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:04 GMT
+      - Tue, 26 Jul 2016 19:09:04 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T18:57:04+00:00","updated_at":"2016-07-26T18:57:04+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","checkout_url":"","currency_code":"USD","order_total":110,"tax_total":0,"lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1/lines/1","method":"DELETE"}]}],"created_at":"2016-07-26T19:09:03+00:00","updated_at":"2016-07-26T19:09:04+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Carts/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:04 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:04 GMT
 - request:
     method: delete
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -329,7 +329,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -344,9 +344,9 @@ http_interactions:
       Content-Length:
       - '0'
       X-Request-Id:
-      - ddb61bba-0a26-4c15-bcd2-f77dabdc80e9
+      - 6804f473-c6fc-4198-bc2a-0f8c2205c653
       Date:
-      - Tue, 26 Jul 2016 18:57:05 GMT
+      - Tue, 26 Jul 2016 19:09:05 GMT
       Connection:
       - close
       Set-Cookie:
@@ -355,10 +355,10 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:05 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:05 GMT
 - request:
     method: post
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders
     body:
       encoding: UTF-8
       string: '{"id":"1","customer":{"id":"1"},"currency_code":"USD","order_total":110.0,"tax_total":0.0,"lines":[{"id":"1","product_id":"1","product_variant_id":"1","quantity":1,"price":"10.0"}]}'
@@ -370,7 +370,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -383,30 +383,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3337'
+      - '3339'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - 0ff2ad06-992c-4565-bbbe-c632a6e28087
+      - 5794cd30-b0e1-41fb-8424-11a5277ab65a
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:05 GMT
+      - Tue, 26 Jul 2016 19:09:05 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","financial_status":"","fulfillment_status":"","currency_code":"USD","order_total":110,"tax_total":0,"shipping_total":0,"tracking_code":"","processed_at_foreign":"","cancelled_at_foreign":"","updated_at_foreign":"","lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"DELETE"}]}],"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","financial_status":"","fulfillment_status":"","currency_code":"USD","order_total":110,"tax_total":0,"shipping_total":0,"tracking_code":"","processed_at_foreign":"","cancelled_at_foreign":"","updated_at_foreign":"","lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"DELETE"}]}],"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:05 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:05 GMT
 - request:
     method: get
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
     body:
       encoding: US-ASCII
       string: ''
@@ -416,7 +416,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -429,30 +429,30 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '3337'
+      - '3339'
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - fc61c532-eefa-4aa6-a2bf-fa51fa2cf2ab
+      - 9363e31b-4884-45b8-9484-281714663194
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json>;
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json>;
         rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:06 GMT
+      - Tue, 26 Jul 2016 19:09:05 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-25T20:33:48+00:00","updated_at":"2016-07-25T20:33:48+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","financial_status":"","fulfillment_status":"","currency_code":"USD","order_total":110,"tax_total":0,"shipping_total":0,"tracking_code":"","processed_at_foreign":"","cancelled_at_foreign":"","updated_at_foreign":"","lines":[{"id":"1","product_id":"1","product_title":"Product
-        #1 - 9829","product_variant_id":"1","product_variant_title":"Product #1 -
-        9829","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"DELETE"}]}],"_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"DELETE"}]}'
+      string: '{"id":"1","customer":{"id":"1","email_address":"jonathan@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-07-26T19:08:54+00:00","updated_at":"2016-07-26T19:08:54+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1","method":"DELETE"}]},"campaign_id":"","financial_status":"","fulfillment_status":"","currency_code":"USD","order_total":110,"tax_total":0,"shipping_total":0,"tracking_code":"","processed_at_foreign":"","cancelled_at_foreign":"","updated_at_foreign":"","lines":[{"id":"1","product_id":"1","product_title":"Product
+        #10 - 2087","product_variant_id":"1","product_variant_title":"Product #10
+        - 2087","quantity":1,"price":10,"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Lines/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1/lines/1","method":"DELETE"}]}],"_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Orders/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:06 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:05 GMT
 - request:
     method: get
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -462,7 +462,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -477,11 +477,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - ce208884-ae69-40af-8469-19f309de2cf6
+      - 1cf74a02-c316-46cf-aaf8-88edde9235b6
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:06 GMT
+      - Tue, 26 Jul 2016 19:09:05 GMT
       Connection:
       - close
       Set-Cookie:
@@ -491,10 +491,10 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:06 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:05 GMT
 - request:
     method: delete
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
       encoding: US-ASCII
       string: ''
@@ -504,7 +504,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -519,11 +519,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 7858c6df-30bb-4a6e-ad5a-059fc572c8ec
+      - 1da2319c-5d14-421a-991c-4ecf78d43acf
       Link:
-      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Tue, 26 Jul 2016 18:57:06 GMT
+      - Tue, 26 Jul 2016 19:09:05 GMT
       Connection:
       - close
       Set-Cookie:
@@ -533,10 +533,10 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:06 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:05 GMT
 - request:
     method: delete
-    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
     body:
       encoding: US-ASCII
       string: ''
@@ -546,7 +546,7 @@ http_interactions:
       Connection:
       - close
       Host:
-      - us13.api.mailchimp.com
+      - us1.api.mailchimp.com
       User-Agent:
       - http.rb/2.0.2
   response:
@@ -561,9 +561,9 @@ http_interactions:
       Content-Length:
       - '0'
       X-Request-Id:
-      - 46bb686c-398a-4643-a856-aa6ec7e1e256
+      - 03f4a10b-954c-4b5a-bdfa-17e5b3511825
       Date:
-      - Tue, 26 Jul 2016 18:57:06 GMT
+      - Tue, 26 Jul 2016 19:09:06 GMT
       Connection:
       - close
       Set-Cookie:
@@ -572,5 +572,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Tue, 26 Jul 2016 18:57:06 GMT
+  recorded_at: Tue, 26 Jul 2016 19:09:06 GMT
 recorded_with: VCR 3.0.3
