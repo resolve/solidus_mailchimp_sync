@@ -3,6 +3,11 @@ require 'spec_helper'
 describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
   let(:syncer) { SolidusMailchimpSync::OrderSynchronizer.new(order) }
 
+  after do
+    delete_if_present("/carts/#{order.id}")
+    delete_if_present("/orders/#{order.id}")
+  end
+
   describe "not completed order" do
     let(:order) { create(:order_with_line_items, line_items_count: 2) }
     before do
