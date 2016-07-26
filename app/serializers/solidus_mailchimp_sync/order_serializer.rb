@@ -12,9 +12,8 @@ module SolidusMailchimpSync
       end
     end
 
-    # TODO checkout_url
     def as_json
-      {
+      hash = {
         id: order.id.to_s,
         customer: {
           id: order.user.id.to_s
@@ -24,6 +23,25 @@ module SolidusMailchimpSync
         tax_total: order.tax_total.to_f,
         lines: line_items
       }
+
+      url = cart_url
+      hash["checkout_url"] = url if url
+
+      hash
+    end
+
+    # Override in custom serializer for custom front-end url
+    def cart_url
+      # Mailchimp does not take URLs for orders, just carts
+      if order_is_cart?
+        if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:cart_url)
+          Spree::Core::Engine.routes.url_helpers.cart_url(host: Rails.application.routes.default_url_options[:host])
+        end
+      end
+    end
+
+    def order_is_cart?
+      order.completed_at.blank?
     end
 
     def to_json

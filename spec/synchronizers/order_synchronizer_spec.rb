@@ -20,6 +20,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
 
       response = SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/carts/#{order.id}")
       expect(response["status"]).to be_nil
+      expect(response["checkout_url"]).to eq(spree.cart_url(host: Rails.application.routes.default_url_options[:host]))
     end
 
     describe "existing order" do
