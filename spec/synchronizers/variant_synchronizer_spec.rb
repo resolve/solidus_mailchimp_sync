@@ -6,7 +6,7 @@ describe SolidusMailchimpSync::VariantSynchronizer, vcr: true do
   describe "with a product not synced yet" do
     let(:variant) { create(:variant) }
     before do
-      SolidusMailchimpSync::Mailchimp.ecommerce_request(:delete, "/products/#{variant.product.id}") rescue nil
+      delete_if_present "/products/#{variant.product.id}"
     end
 
     it "still syncs, with product" do

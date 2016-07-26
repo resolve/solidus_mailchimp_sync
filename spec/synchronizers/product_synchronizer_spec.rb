@@ -4,7 +4,7 @@ describe SolidusMailchimpSync::ProductSynchronizer do
   let(:product) { create(:product, name: "PRODUCT NAME") }
 
   before do
-    SolidusMailchimpSync::Mailchimp.ecommerce_request(:delete, "/products/#{product.id}") rescue nil
+    delete_if_present("/products/#{product.id}")
   end
 
   describe "with VCR", vcr: true do

@@ -4,7 +4,7 @@ describe SolidusMailchimpSync::UserSynchronizer do
   let(:user) { create(:user, email: "jonathan@friendsoftheweb.org") }
 
   before do
-    SolidusMailchimpSync::Mailchimp.ecommerce_request(:delete, "/customers/#{user.id}") rescue nil
+    delete_if_present "/customers/#{user.id}"
   end
 
   describe "with vcr", vcr: true do
