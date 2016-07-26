@@ -44,16 +44,24 @@ module SolidusMailchimpSync
       (model.previous_changes.keys & synced_attributes).present?
     end
 
-    def put
-      Mailchimp.ecommerce_request(:put, path, body: serializer.as_json)
+    def put(arg_path = path)
+      Mailchimp.ecommerce_request(:put, arg_path, body: serializer.as_json)
     end
 
-    def delete
-      Mailchimp.ecommerce_request(:delete, path)
+    def delete(arg_path = path, return_errors: false)
+      Mailchimp.ecommerce_request(:delete, arg_path, return_errors: return_errors)
     end
 
-    def post
-      Mailchimp.ecommerce_request(:post, create_path, body: serializer.as_json)
+    def post(arg_create_path = create_path)
+      Mailchimp.ecommerce_request(:post, arg_create_path, body: serializer.as_json)
+    end
+
+    def get(arg_path = path)
+      Mailchimp.ecommerce_request(:get, arg_path, body: serializer.as_json)
+    end
+
+    def patch(arg_path = path)
+      Mailchimp.ecommerce_request(:patch, arg_path, body: serializer.as_json)
     end
 
     def serializer
