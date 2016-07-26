@@ -15,31 +15,25 @@ module SolidusMailchimpSync
 
     def sync
       if order_is_cart?
-        begin
-          post(create_cart_path)
-        rescue SolidusMailchimpSync::Error => e
-          if e.status == 400 && e.detail =~ /already exists/
-            patch(cart_path)
-          else
-            raise e
-          end
-        end
+        post_or_patch(post_path: create_cart_path, patch_path: cart_path)
       else
         delete(cart_path) rescue nil # ignore if error
-        begin
-          post(create_order_path)
-        rescue SolidusMailchimpSync::Error => e
-          if e.status == 400 && e.detail =~ /already exists/
-            patch(order_path)
-          else
-            raise e
-          end
-        end
+        post_or_patch(post_path: create_order_path, patch_path: order_path)
       end
     end
 
     def order_is_cart?
       model.completed_at.blank?
+    end
+
+    def post_or_patch(post_path:, patch_path:)
+      post(post_path)
+    rescue SolidusMailchimpSync::Error => e
+      if e.status == 400 && e.detail =~ /already exists/
+        patch(patch_path)
+      else
+        raise e
+      end
     end
 
     def mailchimp_cart
