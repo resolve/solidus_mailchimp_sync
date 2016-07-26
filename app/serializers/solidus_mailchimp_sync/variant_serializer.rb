@@ -35,7 +35,7 @@ module SolidusMailchimpSync
     end
 
     def title
-      [variant.product.name, variant.options_text].delete_if { |a| a.blank? }.join(':')
+      [variant.product.name, variant.options_text].delete_if { |a| a.blank? }.join(' ')
     end
 
     # Override in custom serializer for custom front-end url
