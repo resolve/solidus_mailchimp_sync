@@ -16,7 +16,7 @@ module SolidusMailchimpSync
       hash = {
         id: order.id.to_s,
         customer: {
-          id: order.user.id.to_s
+          id: UserSynchronizer.customer_id(order.user)
         },
         currency_code: order.currency,
         order_total: order.total.to_f,

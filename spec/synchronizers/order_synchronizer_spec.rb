@@ -1,15 +1,21 @@
 require 'spec_helper'
 
 describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
-  let(:syncer) { SolidusMailchimpSync::OrderSynchronizer.new(order) }
+  let(:user) { create(:user, email: "test-order-synchronizer@friendsoftheweb.org") }
+  let(:syncer) do
+    SolidusMailchimpSync::OrderSynchronizer.new(order).tap do
+      SolidusMailchimpSync::UserSynchronizer.new(order.user).sync if order.user
+    end
+  end
 
   after do
     delete_if_present("/carts/#{order.id}")
     delete_if_present("/orders/#{order.id}")
+    delete_if_present("/customers/#{SolidusMailchimpSync::UserSynchronizer.customer_id(order.user)}") if order.user
   end
 
   describe "not completed order" do
-    let(:order) { create(:order_with_line_items, line_items_count: 2) }
+    let(:order) { create(:order_with_line_items, line_items_count: 2, user: user) }
     before do
       delete_if_present("/carts/#{order.id}")
     end
@@ -40,7 +46,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
       end
 
       describe "that turns into a completed order" do
-        let(:order) { create(:order_ready_to_complete) }
+        let(:order) { create(:order_ready_to_complete, user: user) }
         before do
           delete_if_present("/orders/#{order.id}")
           syncer.sync
@@ -65,7 +71,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
   end
 
   describe "completed order" do
-    let(:order) { create(:completed_order_with_totals) }
+    let(:order) { create(:completed_order_with_totals, user: user) }
     before do
       delete_if_present("/orders/#{order.id}")
     end
@@ -105,7 +111,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
 
   def expect_order_equals_mailchimp_response(order:, response:)
     expect(response["id"]).to eq(order.id.to_s)
-    expect(response["customer"]["id"]).to eq(order.user.id.to_s)
+    expect(response["customer"]["id"]).to eq(SolidusMailchimpSync::UserSynchronizer.customer_id(order.user))
     expect(response["order_total"]).to eq(order.total)
     expect(response["tax_total"]).to eq(order.tax_total)
 

@@ -24,5 +24,12 @@ module SolidusMailchimpSync
     def path
       "/customers/#{model.id}"
     end
+
+    # ID used to identify a user on mailchimp. Mailchimp does not
+    # allow ID's to change, even though we do, so care is needed.
+    def self.customer_id(user)
+      "#{user.id}-#{user.email}"
+    end
+
   end
 end
