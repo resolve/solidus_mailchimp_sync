@@ -5,7 +5,18 @@ module SolidusMailchimpSync
     self.synced_attributes = %w{id sku}
 
     def sync
-      put
+      tries = 0
+      begin
+        tries += 1
+        put
+      rescue SolidusMailchimpSync::Error => e
+        if tries <= 1 && e.status == 400 && e.title == 'Parent Product Does Not Exist'
+          ProductSynchronizer.new(model.product).sync
+          retry
+        else
+          raise e
+        end
+      end
     end
 
     def path

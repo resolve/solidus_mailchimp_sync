@@ -1,0 +1,276 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 204
+      message: No Content
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '0'
+      X-Request-Id:
+      - a8de3a68-3cb5-4a63-80ee-2560ed45d903
+      Date:
+      - Tue, 26 Jul 2016 17:01:24 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:24 GMT
+- request:
+    method: put
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2
+    body:
+      encoding: UTF-8
+      string: '{"id":"2","title":"Product #1 - 4065 Size: S","sku":"SKU-1","price":19.99,"visiiblity":true,"url":"http://www.example.com/products/product-1-4065"}'
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Content-Length:
+      - '250'
+      X-Request-Id:
+      - 566e0303-8eaa-45c0-8a15-6d3a6ab2f5f6
+      Link:
+      - <https://us13.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      Date:
+      - Tue, 26 Jul 2016 17:01:25 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Parent
+        Product Does Not Exist","status":400,"detail":"The parent product must already
+        exist in order to use PUT on the Variants endpoint.","instance":""}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:25 GMT
+- request:
+    method: post
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","handle":"product-1-4065","title":"Product #1 - 4065","description":"As
+        seen on TV!","published_at_foreign":"2015-07-26T17:01:23Z","variants":[{"id":"1","title":"Product
+        #1 - 4065","sku":"SKU-2","price":19.99,"visiiblity":true,"url":"http://www.example.com/products/product-1-4065"},{"id":"2","title":"Product
+        #1 - 4065 Size: S","sku":"SKU-1","price":19.99,"visiiblity":true,"url":"http://www.example.com/products/product-1-4065"}]}'
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3672'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - d195f735-2942-49cd-8472-1b67e5b7b5a0
+      Link:
+      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Instance.json>;
+        rel="describedBy"
+      Date:
+      - Tue, 26 Jul 2016 17:01:25 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","title":"Product #1 - 4065","handle":"product-1-4065","url":"","description":"As
+        seen on TV!","type":"","vendor":"","image_url":"","variants":[{"id":"1","title":"Product
+        #1 - 4065","url":"http://www.example.com/products/product-1-4065","sku":"SKU-2","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"DELETE"}]},{"id":"2","title":"Product
+        #1 - 4065 Size: S","url":"http://www.example.com/products/product-1-4065","sku":"SKU-1","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"DELETE"}]}],"published_at_foreign":"2015-07-26T17:01:23+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"DELETE"},{"rel":"variants","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Collection.json"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:25 GMT
+- request:
+    method: put
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2
+    body:
+      encoding: UTF-8
+      string: '{"id":"2","title":"Product #1 - 4065 Size: S","sku":"SKU-1","price":19.99,"visiiblity":true,"url":"http://www.example.com/products/product-1-4065"}'
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1337'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - cc8035aa-ff8d-4790-82ab-709ac5b530c4
+      Link:
+      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json>;
+        rel="describedBy"
+      Date:
+      - Tue, 26 Jul 2016 17:01:25 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"id":"2","title":"Product #1 - 4065 Size: S","url":"http://www.example.com/products/product-1-4065","sku":"SKU-1","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"DELETE"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:25 GMT
+- request:
+    method: get
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3672'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - df8bd47f-947b-4cf0-baeb-ad054514ebb6
+      Link:
+      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Instance.json>;
+        rel="describedBy"
+      Date:
+      - Tue, 26 Jul 2016 17:01:25 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","title":"Product #1 - 4065","handle":"product-1-4065","url":"","description":"As
+        seen on TV!","type":"","vendor":"","image_url":"","variants":[{"id":"1","title":"Product
+        #1 - 4065","url":"http://www.example.com/products/product-1-4065","sku":"SKU-2","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/1","method":"DELETE"}]},{"id":"2","title":"Product
+        #1 - 4065 Size: S","url":"http://www.example.com/products/product-1-4065","sku":"SKU-1","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"DELETE"}]}],"published_at_foreign":"2015-07-26T17:01:23+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"DELETE"},{"rel":"variants","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Collection.json"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:25 GMT
+- request:
+    method: get
+    uri: https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Host:
+      - us13.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1337'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 6fba7877-5ff0-4c73-b69f-da234ab36a3c
+      Link:
+      - <https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json>;
+        rel="describedBy"
+      Date:
+      - Tue, 26 Jul 2016 17:01:26 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"id":"2","title":"Product #1 - 4065 Size: S","url":"http://www.example.com/products/product-1-4065","sku":"SKU-1","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"","created_at":"2016-07-26T17:01:25+00:00","updated_at":"2016-07-26T17:01:25+00:00","_links":[{"rel":"self","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1","method":"GET","targetSchema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PATCH","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"PUT","schema":"https://us13.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us13.api.mailchimp.com/3.0/ecommerce/stores/sample-store/products/1/variants/2","method":"DELETE"}]}'
+    http_version: 
+  recorded_at: Tue, 26 Jul 2016 17:01:26 GMT
+recorded_with: VCR 3.0.3
