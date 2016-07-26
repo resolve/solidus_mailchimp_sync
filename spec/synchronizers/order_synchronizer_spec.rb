@@ -93,7 +93,14 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
         expect_order_equals_mailchimp_response(order: order, response: response)
       end
     end
+  end
 
+  describe "order without user" do
+    let(:order) { create(:order_with_line_items, user: nil) }
+    it "can't sync" do
+      response = syncer.sync
+      expect(response).to be_nil
+    end
   end
 
   def expect_order_equals_mailchimp_response(order:, response:)
