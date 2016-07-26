@@ -17,9 +17,9 @@ module SolidusMailchimpSync
       # Note mailchimp does not let us change email address, it won't be updated on
       # subsequent pushes. TODO we have to delete and re-create the user, argh!!!
       {
-        'id': user.id.to_s,
-        'email_address': user.email,
-        'opt_in_status': false
+        'id' => user.id.to_s,
+        'email_address' => user.email,
+        'opt_in_status' => false
       }
     end
 
