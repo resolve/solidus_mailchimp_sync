@@ -1,6 +1,6 @@
 namespace :solidus_mailchimp_sync do
   desc "Create a Mailchimp Store. ENV LIST_ID param is required"
-  task :create_mailchimp_store: :environment do
+  task create_mailchimp_store: :environment do
     unless ENV["LIST_ID"].present?
       raise ArgumentError, "LIST_ID env arg is required. Your mailchimp Listserv ID."
     end
