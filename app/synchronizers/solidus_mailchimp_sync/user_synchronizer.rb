@@ -33,8 +33,10 @@ module SolidusMailchimpSync
 
     # ID used to identify a user on mailchimp. Mailchimp does not
     # allow ID's to change, even though we do, so care is needed.
+    # '@' sign in ID seems to maybe confuse mailchimp.
     def self.customer_id(user)
-      "#{user.id}-#{user.email}"
+      email = user.email && user.email.gsub("@", "-at-")
+      "#{user.id}-#{email}"
     end
 
   end
