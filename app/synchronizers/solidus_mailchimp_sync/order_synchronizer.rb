@@ -9,7 +9,19 @@ module SolidusMailchimpSync
     self.synced_attributes = %w{total completed_at included_tax_total additional_tax_total item_count item_total}
 
     def path
-      raise NameError, "Can't call #path on #{self.class.name}, need `cart_path` or `order_path`"
+      if order_is_cart?
+        cart_path
+      else
+        order_path
+      end
+    end
+
+    def create_path
+      if order_is_cart?
+        create_cart_path
+      else
+        create_order_path
+      end
     end
 
     def should_sync?
@@ -28,15 +40,13 @@ module SolidusMailchimpSync
         return nil
       end
 
-      if order_is_cart?
-        post_or_patch(post_path: create_cart_path, patch_path: cart_path)
-      else
+      unless order_is_cart?
         # delete, but ignore if it's not there
         response = delete(cart_path, return_errors: true)
         raise response if response.kind_of?(SolidusMailchimpSync::Error) && response.status != 404
-
-        post_or_patch(post_path: create_order_path, patch_path: order_path)
       end
+
+      post_or_patch(post_path: create_path, patch_path: path)
     end
 
     def order_is_cart?
