@@ -16,14 +16,19 @@ module SolidusMailchimpSync
     # We don't include image or url, variants can have those anyway,
     # and variants are actually editable, do it there.
     def as_json
-      {
+      hash = {
         id: product.id.to_s,
         handle: product.slug,
         title: product.name,
         description: product.description,
-        published_at_foreign: product.available_on.iso8601,
         variants: variants_json
       }
+
+      if product.available_on
+        hash[:published_at_foreign] = product.available_on.iso8601
+      end
+
+      hash
     end
 
     def variants_json
