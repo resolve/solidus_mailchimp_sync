@@ -22,7 +22,11 @@ module SolidusMailchimpSync
     end
 
     def path
-      "/customers/#{model.id}"
+      "/customers/#{mailchimp_id}"
+    end
+
+    def mailchimp_id
+      self.class.customer_id(model)
     end
 
     # ID used to identify a user on mailchimp. Mailchimp does not
