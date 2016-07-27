@@ -1,3 +1,5 @@
+require 'cgi'
+
 module SolidusMailchimpSync
   class UserSynchronizer < BaseSynchronizer
     self.serializer_class_name = "::SolidusMailchimpSync::CustomerSerializer"
@@ -22,7 +24,7 @@ module SolidusMailchimpSync
     end
 
     def path
-      "/customers/#{mailchimp_id}"
+      "/customers/#{CGI.escape mailchimp_id}"
     end
 
     def mailchimp_id
