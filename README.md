@@ -57,6 +57,12 @@ Not sure if that can be created through anything but API. You can create one by:
 
 Then add the storeID for created store to your configuration.
 
+Before going live, you will probably want to bulk-add all your existing data --
+if existing products aren't added, orders won't be able to be synced. This
+could take a while:
+
+    RAILS_ENV=production rake solidus_mailchimp_sync:bulk_sync
+
 Known issues/To do
 -------
 
