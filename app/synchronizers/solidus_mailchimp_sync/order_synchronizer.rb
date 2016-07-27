@@ -41,16 +41,25 @@ module SolidusMailchimpSync
       end
 
       if model.line_items.empty?
-        # Can't sync an empty cart to mailchimp, delete if we've already synced
+        # Can't sync an empty cart to mailchimp, delete if we've already synced,
+        # and bail out.
         return delete(path, ignore_404: true)
       end
 
-      unless order_is_cart?
-        # delete, but ignore if it's not there
-        response = delete(cart_path, return_errors: true, ignore_404: true)
+      if !order_is_cart?
+        # delete any previous cart version of this order, but ignore if it's not there
+        delete(cart_path, ignore_404: true)
       end
 
       post_or_patch(post_path: create_path, patch_path: path)
+    rescue SolidusMailchimpSync::Error => e
+      tries ||= 0 ; tries += 1
+      if user_not_synced_error?(e)
+        SolidusMailchimpSync::UserSynchronizer.new(model.user).sync
+        retry if tries <= 1
+      else
+        raise e
+      end
     end
 
     def order_is_cart?
@@ -65,6 +74,12 @@ module SolidusMailchimpSync
       else
         raise e
       end
+    end
+
+    def user_not_synced_error?(e)
+      e.status == 400 &&
+        e.response_hash["errors"].present? &&
+        e.response_hash["errors"].any? { |h| %w{customer.email_address customer.opt_in_status}.include? h["field"] }
     end
 
     def mailchimp_cart

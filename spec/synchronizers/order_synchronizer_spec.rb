@@ -133,6 +133,31 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
     end
   end
 
+  # Email address chanages may make this happen.
+  describe "order where user hasn't been synced yet" do
+    let(:order) { create(:order, user: user) }
+    let!(:syncer) { SolidusMailchimpSync::OrderSynchronizer.new(order) }
+
+    before do
+      delete_if_present("/customers/#{SolidusMailchimpSync::UserSynchronizer.customer_id(order.user)}")
+      # ensure user really hasn't synced as pre-condition
+      response =
+        SolidusMailchimpSync::Mailchimp.ecommerce_request(:get,
+          "/customers/#{SolidusMailchimpSync::UserSynchronizer.customer_id(order.user)}",
+          return_errors: true)
+
+      expect(response).to be_kind_of(SolidusMailchimpSync::Error)
+      expect(response.status).to eq(404)
+    end
+
+    it "syncs and creates user" do
+      SolidusMailchimpSync::UserSynchronizer.new(order.user).sync
+      response = syncer.sync
+      SolidusMailchimpSync::Mailchimp.ecommerce_request(:get,
+          "/customers/#{SolidusMailchimpSync::UserSynchronizer.customer_id(order.user)}")
+    end
+  end
+
   def expect_order_equals_mailchimp_response(order:, response:)
     expect(response["id"]).to eq(order.id.to_s)
     expect(response["customer"]["id"]).to eq(SolidusMailchimpSync::UserSynchronizer.customer_id(order.user))
