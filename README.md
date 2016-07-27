@@ -57,11 +57,13 @@ Not sure if that can be created through anything but API. You can create one by:
 
 Then add the storeID for created store to your configuration.
 
-TO DO
+Known issues/To do
 -------
 
 * If a user changes their email addresses, their old orders may be no longer associated with
-  them in mailchimp, they will wind up with two mailchimp customer records.
+  them in mailchimp, they will wind up with two mailchimp customer records. (Mailchimp
+  docs suggest you can change an existing Customer's id itself, but it didn't seem to work.
+  can't change an existing Customer's email address)
 * Debounce: This may send a LOT of updates to mailchimp, when you're editing something.
   Have an idea for an implementation debounce feature that could coalesce them.
 
