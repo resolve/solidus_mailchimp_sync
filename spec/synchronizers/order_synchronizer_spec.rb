@@ -29,6 +29,13 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
       expect(response["checkout_url"]).to eq(spree.cart_url(host: Rails.application.routes.default_url_options[:host]))
     end
 
+    describe "empty order" do
+      let(:order) { create(:order, user: user).tap { |o| expect(o.line_items).to be_empty} }
+      it "does not sync without error" do
+        response = syncer.sync
+      end
+    end
+
     describe "existing order" do
       let(:new_variant) { create(:variant).tap { |v| SolidusMailchimpSync::VariantSynchronizer.new(v).sync } }
       before do
@@ -66,6 +73,23 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
           expect(error.status).to eq(404)
         end
       end
+
+      describe "that becomes empty" do
+        before do
+          syncer.sync
+          SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/carts/#{order.id}")
+          order.line_items.destroy_all
+          expect(order.line_items).to be_empty
+        end
+        it "deletes on sync" do
+          syncer.sync
+          # no longer present on mailchimp
+          error = SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/carts/#{order.id}", return_errors: true)
+          expect(error.status).to eq(404)
+        end
+
+      end
+
     end
 
   end

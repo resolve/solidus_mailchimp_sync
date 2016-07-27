@@ -40,6 +40,11 @@ module SolidusMailchimpSync
         return nil
       end
 
+      if model.line_items.empty?
+        # Can't sync an empty cart to mailchimp, delete if we've already synced
+        return delete(path, ignore_404: true)
+      end
+
       unless order_is_cart?
         # delete, but ignore if it's not there
         response = delete(cart_path, return_errors: true, ignore_404: true)
