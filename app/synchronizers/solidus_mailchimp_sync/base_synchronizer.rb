@@ -48,8 +48,13 @@ module SolidusMailchimpSync
       Mailchimp.ecommerce_request(:put, arg_path, body: serializer.as_json)
     end
 
-    def delete(arg_path = path, return_errors: false)
+    def delete(arg_path = path, return_errors: false, ignore_404: false)
       Mailchimp.ecommerce_request(:delete, arg_path, return_errors: return_errors)
+    rescue SolidusMailchimpSync::Error => e
+      if ignore_404 && e.status == 404
+        return nil
+      end
+      raise e
     end
 
     def post(arg_create_path = create_path)

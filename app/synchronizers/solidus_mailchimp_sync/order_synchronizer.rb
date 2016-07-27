@@ -42,8 +42,7 @@ module SolidusMailchimpSync
 
       unless order_is_cart?
         # delete, but ignore if it's not there
-        response = delete(cart_path, return_errors: true)
-        raise response if response.kind_of?(SolidusMailchimpSync::Error) && response.status != 404
+        response = delete(cart_path, return_errors: true, ignore_404: true)
       end
 
       post_or_patch(post_path: create_path, patch_path: path)
