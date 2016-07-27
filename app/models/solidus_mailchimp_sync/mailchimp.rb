@@ -9,6 +9,8 @@ module SolidusMailchimpSync
     # If Mailchimp errors, will normally raise a SolidusMailchimpSync::Error, but
     # set `return_errors: true` to return the Error as return value instead.
     def self.request(method, path, body: nil, return_errors: false)
+      return unless SolidusMailchimpSync.enabled
+
       if SolidusMailchimpSync.api_key.blank?
         raise ArgumentError, "Missing required configuration `SolidusMailchimpSync.api_key`"
       end

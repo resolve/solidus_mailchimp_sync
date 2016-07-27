@@ -17,3 +17,7 @@ SolidusMailchimpSync::BaseSynchronizer.auto_sync_enabled = Rails.env.production?
 # Automatic synchronization is done with ActiveJob, use a queue
 # other than :default if you want:
 # SolidusMailchimpSync::SyncJob.use_queue_name = :mailchimp_sync
+
+# Turn off not just auto-sync, but completely disable connections
+# to mailchip at all, make them no-op.
+# SolidusMailchimpSync.enabled = false
