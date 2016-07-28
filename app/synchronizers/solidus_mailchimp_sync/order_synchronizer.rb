@@ -82,12 +82,6 @@ module SolidusMailchimpSync
         e.response_hash["errors"].any? { |h| %w{customer.email_address customer.opt_in_status}.include? h["field"] }
     end
 
-    def mailchimp_cart
-      get(cart_path)
-    rescue SolidusMailchimpSync::Error => e
-      raise e if e.status != 404
-    end
-
     def cart_path
       "/carts/#{model.id}"
     end
