@@ -3,10 +3,11 @@ module SolidusMailchimpSync
   # as cart status changes.
   class OrderSynchronizer < BaseSynchronizer
     self.serializer_class_name = "::SolidusMailchimpSync::OrderSerializer"
-    # Not sure if tracking synced attributes is okay here, we might need
-    # an update even if none of these change, although it would be unusual.
-    # But we'll try it.
-    self.synced_attributes = %w{total completed_at included_tax_total additional_tax_total item_count item_total}
+    # We update on all state changes, even though some might not really
+    # require a mailchimp sync, it just depends on what we're serializing.
+    # Also, when solidus sets completed_at, it seems not to trigger
+    # an after_commit, so we can't catch transition to complete that way.
+    self.synced_attributes = %w{state total completed_at included_tax_total additional_tax_total item_count item_total}
 
     class_attribute :line_item_serializer_class_name
     self.line_item_serializer_class_name = "::SolidusMailchimpSync::LineItemSerializer"
