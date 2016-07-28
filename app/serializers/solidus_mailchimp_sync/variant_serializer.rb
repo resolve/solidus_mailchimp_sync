@@ -17,8 +17,8 @@ module SolidusMailchimpSync
         title: title,
         sku: variant.sku,
         price: variant.price.to_f,
-
-        visibility: visibility
+        # visibility is a string
+        visibility: (visibility || '').to_s
       }
 
       url = self.url
