@@ -24,6 +24,7 @@ module SolidusMailchimpSync
       end
     end
 
+    # Override to take account of our mailchimp_auto_sync_needed explicit flag
     def should_sync?
       model.mailchimp_auto_sync_needed || super
     end
@@ -40,14 +41,16 @@ module SolidusMailchimpSync
         return nil
       end
 
+      # Can't sync an empty cart to mailchimp, delete the cart/order if
+      # we've previously synced, and bail out of this sync.
       if model.line_items.empty?
-        # Can't sync an empty cart to mailchimp, delete if we've already synced,
-        # and bail out.
         return delete(path, ignore_404: true)
       end
 
+      # if it's a completed order, delete any previous synced _cart_ version
+      # of this order, if one is present. There should be no Mailchimp 'cart',
+      # only a mailchimp 'order' now.
       if !order_is_cart?
-        # delete any previous cart version of this order, but ignore if it's not there
         delete(cart_path, ignore_404: true)
       end
 
