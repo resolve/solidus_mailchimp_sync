@@ -27,16 +27,6 @@ module SolidusMailchimpSync
       end
     end
 
-    # Override to take account of our mailchimp_auto_sync_needed explicit flag
-    def should_sync?
-      model.mailchimp_auto_sync_needed || super
-    end
-
-    def auto_sync(*args)
-      super
-      mailchimp_auto_sync_needed = false
-    end
-
     def sync
       # If we don't have a user with an email address we can't sync -- mailchimp
       # carts and orders require a customer, which requires an email address.
