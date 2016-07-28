@@ -35,7 +35,8 @@ module SolidusMailchimpSync
     # allow ID's to change, even though we do, so care is needed.
     # '@' sign in ID seems to maybe confuse mailchimp.
     def self.customer_id(user)
-      email = user.email && user.email.gsub("@", "-at-")
+      email = user.send(email_address_attribute)
+      email = email && email.gsub("@", "-at-")
       "#{user.id}-#{email}"
     end
 
