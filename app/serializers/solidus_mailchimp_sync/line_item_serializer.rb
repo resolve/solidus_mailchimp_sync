@@ -15,7 +15,7 @@ module SolidusMailchimpSync
         product_id: line_item.product.id.to_s,
         product_variant_id: line_item.variant.id.to_s,
         quantity: line_item.quantity,
-        price: line_item.price
+        price: line_item.price.to_f
       }
     end
 
