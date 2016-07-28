@@ -1,11 +1,13 @@
 require 'json'
 
 module SolidusMailchimpSync
-  # Right now ONLY includes email address. Including other attributes in a
-  # re-usable gem is tricky because everyone has their own user class.
-  # But there are various approaches we could use.
+  # ONLY includes email address. Everyone has their own user class,
+  # use a custom serializer to serialize other stuff. To change where
+  # email address is stored in user record, be sure to set
+  # SolidusMailchimpSync::UserSynchronizer.email_address_attribute
   class CustomerSerializer
     attr_reader :user
+
     def initialize(user)
       @user = user
       unless user.persisted?
@@ -15,7 +17,8 @@ module SolidusMailchimpSync
 
     def as_json
       # Note mailchimp does not let us change email address, it won't be updated on
-      # subsequent pushes. TODO we have to delete and re-create the user, argh!!!
+      # subsequent pushes. So our mailchimp id includes the email address,
+      # and new mailchimp Customer will be created if email address changes.
       {
         'id' => UserSynchronizer.customer_id(user),
         'email_address' => user.send(UserSynchronizer.email_address_attribute),
