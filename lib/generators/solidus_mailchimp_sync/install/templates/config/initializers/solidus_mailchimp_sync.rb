@@ -1,7 +1,7 @@
+# https://github.com/friendsoftheweb/solidus_mailchimp_sync
 
 # Strogly suggest you set your mailchimp API key in your ENV
 SolidusMailchimpSync.api_key = ENV['MAILCHIMP_API_KEY']
-
 
 # These ones are not especially confidential and don't need to be ENV,
 # you can set them however you like:
