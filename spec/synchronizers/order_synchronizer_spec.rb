@@ -95,7 +95,8 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
   end
 
   describe "completed order" do
-    let(:order) { create(:completed_order_with_totals, user: user) }
+    let(:shipment_cost) { 15.0.to_d }
+    let(:order) { create(:completed_order_with_totals, user: user, shipment_cost: shipment_cost) }
     before do
       delete_if_present("/orders/#{order.id}")
     end
@@ -106,6 +107,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
 
       response = SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/orders/#{order.id}")
       expect(response["status"]).to be_nil
+      expect(response["shipping_total"]).to eq(shipment_cost)
     end
 
     describe "existing order" do

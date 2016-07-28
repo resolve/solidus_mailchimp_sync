@@ -27,21 +27,30 @@ module SolidusMailchimpSync
       url = cart_url
       hash["checkout_url"] = url if url
 
+      hash["shipping_total"] = shipping_total if shipping_total
+
       hash
     end
 
     # Override in custom serializer for custom front-end url
     def cart_url
       # Mailchimp does not take URLs for orders, just carts
-      if order_is_cart?
+      unless order_complete?
         if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:cart_url)
           Spree::Core::Engine.routes.url_helpers.cart_url(host: Rails.application.routes.default_url_options[:host])
         end
       end
     end
 
-    def order_is_cart?
-      order.completed_at.blank?
+    def order_complete?
+      # Yes, somehow solidus can sometimes, temporarily, in our after commit hook
+      # have state==complete set, but not completed_at
+      order.completed? || order.state == "complete"
+    end
+
+    def shipping_total
+      # Mailchimp only wants shipping total for Orders, not Carts.
+      order.shipment_total if order_complete?
     end
 
     def to_json
