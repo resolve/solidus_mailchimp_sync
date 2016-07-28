@@ -35,7 +35,13 @@ namespace :solidus_mailchimp_sync do
       user_count = Spree.user_class.count
       progress_bar = ProgressBar.create(total: user_count, format: progress_format, title: Spree.user_class.name.pluralize)
       Spree.user_class.find_each do |user|
-        SolidusMailchimpSync::UserSynchronizer.new(user).sync
+        begin
+          SolidusMailchimpSync::UserSynchronizer.new(user).sync
+        rescue SolidusMailchimpSync::Error => e
+          # just so we know what user failed.
+          puts user.inspect
+          raise e
+        end
         progress_bar.increment
       end
       progress_bar.finish
