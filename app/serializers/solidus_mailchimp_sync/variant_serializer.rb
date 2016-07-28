@@ -18,7 +18,7 @@ module SolidusMailchimpSync
         sku: variant.sku,
         price: variant.price.to_f,
 
-        visiiblity: visibility
+        visibility: visibility
       }
 
       url = self.url
@@ -50,9 +50,10 @@ module SolidusMailchimpSync
       (variant.images.first || variant.product.images.first).try(:url)
     end
 
-    # Override for custom visibility.
+    # Override for custom visibility. Mailchimp wants a string for some reason,
+    # not entirely sure what the string should be.
     def visibility
-      variant.product.available?
+      variant.product.available?.to_s
     end
   end
 end
