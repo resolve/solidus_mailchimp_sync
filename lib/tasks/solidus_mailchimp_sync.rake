@@ -55,9 +55,9 @@ namespace :solidus_mailchimp_sync do
     end
     progress_bar.finish
 
-    order_count = Spree::Order.count
-    progress_bar = ProgressBar.create(total: order_count, format: progress_format, title: "Spree::Orders")
-    Spree::Order.find_each do |order|
+    order_count = Spree::Order.complete.count
+    progress_bar = ProgressBar.create(total: order_count, format: progress_format, title: "Completed Spree::Orders")
+    Spree::Order.complete.find_each do |order|
       SolidusMailchimpSync::OrderSynchronizer.new(order).sync
       progress_bar.increment
     end
