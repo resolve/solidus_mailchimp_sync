@@ -50,7 +50,7 @@ module SolidusMailchimpSync
 
     def line_items
       order.line_items.collect do |line_item|
-        LineItemSerializer.new(line_item).as_json
+        ::SolidusMailchimpSync::OrderSynchronizer.line_item_serializer_class_name.constantize.new(line_item).as_json
       end
     end
   end

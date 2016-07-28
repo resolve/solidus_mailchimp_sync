@@ -8,6 +8,9 @@ module SolidusMailchimpSync
     # But we'll try it.
     self.synced_attributes = %w{total completed_at included_tax_total additional_tax_total item_count item_total}
 
+    class_attribute :line_item_serializer_class_name
+    self.line_item_serializer_class_name = "::SolidusMailchimpSync::LineItemSerializer"
+
     def path
       if order_is_cart?
         cart_path
