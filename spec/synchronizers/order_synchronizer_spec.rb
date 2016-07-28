@@ -135,7 +135,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
 
   # Email address chanages may make this happen.
   describe "order where user hasn't been synced yet" do
-    let(:order) { create(:order, user: user) }
+    let(:order) { create(:order_with_line_items, user: user) }
     let!(:syncer) { SolidusMailchimpSync::OrderSynchronizer.new(order) }
 
     before do
@@ -153,6 +153,8 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
     it "syncs and creates user" do
       SolidusMailchimpSync::UserSynchronizer.new(order.user).sync
       response = syncer.sync
+      SolidusMailchimpSync::Mailchimp.ecommerce_request(:get,
+          "/carts/#{order.id}")
       SolidusMailchimpSync::Mailchimp.ecommerce_request(:get,
           "/customers/#{SolidusMailchimpSync::UserSynchronizer.customer_id(order.user)}")
     end
