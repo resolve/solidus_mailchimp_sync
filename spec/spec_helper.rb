@@ -107,4 +107,4 @@ RSpec.configure do |config|
 end
 
 Rails.application.routes.default_url_options[:host] = 'www.example.com'
-SolidusMailchimpSync::BaseSynchronizer.auto_sync_enabled = false
+SolidusMailchimpSync.auto_sync_enabled = false

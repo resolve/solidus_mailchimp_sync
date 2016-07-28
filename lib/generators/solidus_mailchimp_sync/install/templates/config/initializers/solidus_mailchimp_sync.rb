@@ -12,7 +12,7 @@ SolidusMailchimpSync.store_id = ENV['MAILCHIMP_STORE_ID']
 
 # Disable automatic sync except in production. Feel free to change
 # this is you like.
-SolidusMailchimpSync::BaseSynchronizer.auto_sync_enabled = Rails.env.production?
+SolidusMailchimpSync.auto_sync_enabled = Rails.env.production?
 
 # Automatic synchronization is done with ActiveJob, use a queue
 # other than :default if you want:
