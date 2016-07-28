@@ -12,18 +12,18 @@ module SolidusMailchimpSync
     self.line_item_serializer_class_name = "::SolidusMailchimpSync::LineItemSerializer"
 
     def path
-      if order_is_cart?
-        cart_path
-      else
+      if order_complete?
         order_path
+      else
+        cart_path
       end
     end
 
     def create_path
-      if order_is_cart?
-        create_cart_path
-      else
+      if order_complete?
         create_order_path
+      else
+        create_cart_path
       end
     end
 
@@ -43,7 +43,8 @@ module SolidusMailchimpSync
       # if it's a completed order, delete any previous synced _cart_ version
       # of this order, if one is present. There should be no Mailchimp 'cart',
       # only a mailchimp 'order' now.
-      if !order_is_cart?
+      #byebug
+      if order_complete?
         delete(cart_path, ignore_404: true)
       end
 
@@ -58,8 +59,10 @@ module SolidusMailchimpSync
       end
     end
 
-    def order_is_cart?
-      model.completed_at.blank?
+    def order_complete?
+      # Yes, somehow solidus can sometimes, temporarily, in our after commit hook
+      # have state==complete set, but not completed_at
+      model.completed? || model.state == "complete"
     end
 
     def post_or_patch(post_path:, patch_path:)
