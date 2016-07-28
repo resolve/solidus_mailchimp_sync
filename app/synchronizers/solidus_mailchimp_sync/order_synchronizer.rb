@@ -54,9 +54,9 @@ module SolidusMailchimpSync
       post_or_patch(post_path: create_path, patch_path: path)
     rescue SolidusMailchimpSync::Error => e
       tries ||= 0 ; tries += 1
-      if user_not_synced_error?(e)
+      if tries <= 1 && user_not_synced_error?(e)
         SolidusMailchimpSync::UserSynchronizer.new(model.user).sync
-        retry if tries <= 1
+        retry
       else
         raise e
       end
