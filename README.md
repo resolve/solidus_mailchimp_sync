@@ -15,7 +15,10 @@ hooks to Solidus models.
 * Solidus `Product`, `Variant` (and images) to Mailchimp `Product` and `Variant`.
 * Solidus `Order` (and their `LineItem`s), to Mailchimp `Cart` and `Order` (and their `Line`s).
 
-Not all possible attributes that can be sync'd may yet be synced, work in progress.
+Not all possible attributes that can be sync'd may yet be synced. It does
+not yet sync Order payment/cancel/return/shipment state. It does not yet sync Customer
+`orders_count`/`total_spent`. Some Mailchimp E-Commerce features may require these, others
+are still usable.
 
 Right now this plugin will connect everything in Solidus to a single Mailchimp `Store`, it does
 not support multiple Mailchimp Stores.
@@ -71,7 +74,9 @@ Known issues/To do
   docs suggest you can change an existing Customer's id itself, but it didn't seem to work.
   can't change an existing Customer's email address)
 * Debounce: This may send a LOT of updates to mailchimp, when you're editing something.
-  Have an idea for an implementation debounce feature that could coalesce them.
+  In checkout process there are sometimes multiple syncs for order, not sure why.
+  Have an idea for an implementation debounce feature that could debounce/coalesce mailchimp
+  syncs in the general case.
 
 Testing
 -------

@@ -21,3 +21,16 @@ SolidusMailchimpSync.auto_sync_enabled = Rails.env.production?
 # Turn off not just auto-sync, but completely disable connections
 # to mailchip at all, make them no-op.
 # SolidusMailchimpSync.enabled = false
+
+# You may want to provide custom serializers, to provide custom
+# urls (esp if you don't use Solidus frontend), or account
+# for custom data or logic, or sync more Customer attributes
+# from your local User class.
+#
+# SolidusMailchimpSync::OrderSynchronizer.serializer_class_name = "::SolidusMailchimpSync::MyAppOrderSerializer"
+# SolidusMailchimpSync::VariantSynchronizer.serializer_class_name = "::SolidusMailchimpSync::MyAppVariantSerializer"
+#
+# SolidusMailchimpSync::UserSynchronizer.synced_attributes.concat ['first_name', 'last_name'] # need to be strings
+# SolidusMailchimpSync::UserSynchronizer.serializer_class_name = "::SolidusMailchimpSync::MyAppCustomerSerializer"
+
+
