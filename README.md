@@ -67,7 +67,7 @@ could take a while:
     RAILS_ENV=production rake solidus_mailchimp_sync:bulk_sync
 
 Known issues/To do
--------
+------------------
 
 * If a user changes their email addresses, their old orders may be no longer associated with
   them in mailchimp, they will wind up with two mailchimp customer records. (Mailchimp
@@ -77,6 +77,17 @@ Known issues/To do
   In checkout process there are sometimes multiple syncs for order, not sure why.
   Have an idea for an implementation debounce feature that could debounce/coalesce mailchimp
   syncs in the general case.
+
+Maintenance Expectations
+------------------------
+
+We've develoepd this for our own clients needs. We are sharing it with the intention
+of sharing/collaborating with other developers, so they don't have to re-invent
+the wheel.
+
+We think this is solid and reliable code, but our future ability to attend to
+any maintenance or development will depend on our time and clients needs. We
+will do our best to respond to PR'.
 
 Testing
 -------
