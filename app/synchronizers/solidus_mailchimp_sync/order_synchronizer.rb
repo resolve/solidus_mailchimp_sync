@@ -7,7 +7,14 @@ module SolidusMailchimpSync
     # require a mailchimp sync, it just depends on what we're serializing.
     # Also, when solidus sets completed_at, it seems not to trigger
     # an after_commit, so we can't catch transition to complete that way.
-    self.synced_attributes = %w{state total completed_at included_tax_total additional_tax_total item_count item_total}
+    #
+    # We used to update on changes to any totals thinking we could catch
+    # line item changes that way -- but removing a line item and adding
+    # another with the exact same price wouldn't trigger total changes, so
+    # we had to trap all line item changes instead on a LineItem decorator,
+    # so sync'ing on changes to order totals isn't neccesary just causes
+    # extra superfluous syncs.
+    self.synced_attributes = %w{state}
 
     class_attribute :line_item_serializer_class_name
     self.line_item_serializer_class_name = "::SolidusMailchimpSync::LineItemSerializer"
