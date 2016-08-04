@@ -108,6 +108,7 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
       response = SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/orders/#{order.id}")
       expect(response["status"]).to be_nil
       expect(response["shipping_total"]).to eq(shipment_cost)
+      expect(Time.iso8601(response["processed_at_foreign"])).to eq(order.completed_at.change(:usec => 0))
     end
 
     describe "existing order" do
@@ -167,6 +168,10 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
     expect(response["customer"]["id"]).to eq(SolidusMailchimpSync::UserSynchronizer.customer_id(order.user))
     expect(response["order_total"]).to eq(order.total)
     expect(response["tax_total"]).to eq(order.tax_total)
+
+    if order.completed_at.present?
+      expect(Time.iso8601(response["processed_at_foreign"])).to eq(order.completed_at.change(:usec => 0))
+    end
 
     order.line_items.each do |line_item|
       response_line = response["lines"].find {|h| h["id"] == line_item.id.to_s }

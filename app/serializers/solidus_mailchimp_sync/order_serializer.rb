@@ -31,6 +31,10 @@ module SolidusMailchimpSync
         hash["checkout_url"] = url if url
       end
 
+      if order.completed_at.present?
+        hash["processed_at_foreign"] =  order.completed_at.iso8601
+      end
+
       hash["shipping_total"] = shipping_total if shipping_total
 
       hash

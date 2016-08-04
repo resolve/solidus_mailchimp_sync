@@ -27,11 +27,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 9410594b-782d-4045-b635-dac7d1e71f09
+      - bbfc6d2d-8580-400e-8124-f2437659cf2d
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Thu, 28 Jul 2016 19:13:13 GMT
+      - Thu, 04 Aug 2016 16:54:56 GMT
       Connection:
       - close
       Set-Cookie:
@@ -41,7 +41,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 19:13:13 GMT
+  recorded_at: Thu, 04 Aug 2016 16:54:56 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
@@ -69,11 +69,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 78b01739-332c-472a-8ebd-66d94d1019ca
+      - 33be9b1d-6bf9-4bbd-a65f-757bf7676023
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Thu, 28 Jul 2016 19:13:13 GMT
+      - Thu, 04 Aug 2016 16:54:56 GMT
       Connection:
       - close
       Set-Cookie:
@@ -83,5 +83,5 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Thu, 28 Jul 2016 19:13:13 GMT
+  recorded_at: Thu, 04 Aug 2016 16:54:56 GMT
 recorded_with: VCR 3.0.3
