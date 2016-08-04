@@ -96,7 +96,8 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
 
   describe "completed order" do
     let(:shipment_cost) { 15.0.to_d }
-    let(:order) { create(:completed_order_with_totals, user: user, shipment_cost: shipment_cost) }
+    let(:completed_at) { Time.new(2016, 5, 5, 10, 10, 10, "+05:00") }
+    let(:order) { create(:completed_order_with_totals, user: user, shipment_cost: shipment_cost).tap {|o| o.update(completed_at: completed_at) } }
     before do
       delete_if_present("/orders/#{order.id}")
     end
