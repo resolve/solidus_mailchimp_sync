@@ -32,10 +32,12 @@ describe SolidusMailchimpSync::ProductSynchronizer do
     end
 
     describe "with variants" do
-      let(:product) { create(:product, name: "PRODUCT NAME") do |p|
-        p.variants << create(:variant)
-        p.variants << create(:variant)
-      end }
+      let(:product) do
+        create(:product, name: "PRODUCT NAME") do |p|
+          2.times { p.variants << create(:variant, product: p) }
+        end
+      end
+
       it "does not sync master variant" do
         syncer = SolidusMailchimpSync::ProductSynchronizer.new(product)
         response = syncer.sync
