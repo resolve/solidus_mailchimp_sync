@@ -73,6 +73,13 @@ Known issues/To do
   them in mailchimp, they will wind up with two mailchimp customer records. (Mailchimp
   docs suggest you can change an existing Customer's id itself, but it didn't seem to work.
   can't change an existing Customer's email address)
+
+* Mailchimp API does not let us update products. This is problematic if for instance
+  available_on changes, or other metadata like image/description/title etc. We
+  haven't found a good workaround, trying to delete and recreate product in
+  Mailchimp is also problematic. We do try to avoid sync'ing product until
+  it's `available`, with this logic being customizable.
+
 * Debounce: This may send a LOT of updates to mailchimp, when you're editing something.
   In checkout process there are sometimes multiple syncs for order, not sure why.
   Have an idea for an implementation debounce feature that could debounce/coalesce mailchimp
