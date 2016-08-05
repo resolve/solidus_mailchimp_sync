@@ -8,6 +8,13 @@ describe SolidusMailchimpSync::OrderSynchronizer, vcr: true do
     end
   end
 
+  before do
+    # sync all variants so we can sync order
+    order.variants.each do |variant|
+      SolidusMailchimpSync::VariantSynchronizer.new(variant).sync
+    end
+  end
+
   after do
     delete_if_present("/carts/#{order.id}")
     delete_if_present("/orders/#{order.id}")

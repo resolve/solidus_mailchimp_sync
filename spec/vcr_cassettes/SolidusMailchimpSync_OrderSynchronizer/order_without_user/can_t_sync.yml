@@ -1,6 +1,52 @@
 ---
 http_interactions:
 - request:
+    method: put
+    uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1/variants/1
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","title":"Product #13 - 5737","sku":"SKU-15","price":19.99,"visibility":"true","url":"http://www.example.com/products/product-13-5737"}'
+    headers:
+      Authorization:
+      - Basic <OMITTED AUTH HEADER>
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=UTF-8
+      Host:
+      - us1.api.mailchimp.com
+      User-Agent:
+      - http.rb/2.0.2
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1336'
+      Vary:
+      - Accept-Encoding
+      X-Request-Id:
+      - 495440a6-5593-441e-8954-4b9cc89f7599
+      Link:
+      - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json>;
+        rel="describedBy"
+      Date:
+      - Fri, 05 Aug 2016 15:22:14 GMT
+      Connection:
+      - close
+      Set-Cookie:
+      - _AVESTA_ENVIRONMENT=prod; path=/
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","title":"Product #13 - 5737","url":"http://www.example.com/products/product-13-5737","sku":"SKU-15","price":19.99,"inventory_quantity":0,"image_url":"","backorders":"","visibility":"true","created_at":"2016-08-05T15:21:29+00:00","updated_at":"2016-08-05T15:22:14+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1/variants/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1/variants/1","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1/variants/1","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Products/Variants/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1/variants/1","method":"DELETE"}]}'
+    http_version: 
+  recorded_at: Fri, 05 Aug 2016 15:22:14 GMT
+- request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
     body:
@@ -27,11 +73,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 475e29c6-84b4-4b3d-af2b-2b37065154da
+      - 4c846787-21bf-41a7-b652-76a20dc56335
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Thu, 04 Aug 2016 17:10:04 GMT
+      - Fri, 05 Aug 2016 15:22:14 GMT
       Connection:
       - close
       Set-Cookie:
@@ -41,7 +87,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Thu, 04 Aug 2016 17:10:04 GMT
+  recorded_at: Fri, 05 Aug 2016 15:22:14 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
@@ -69,11 +115,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - e4b326b1-529f-48a9-bc13-b65022c0a100
+      - 14051193-29f7-4036-a3ce-bd268bfcccdb
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Thu, 04 Aug 2016 17:10:04 GMT
+      - Fri, 05 Aug 2016 15:22:14 GMT
       Connection:
       - close
       Set-Cookie:
@@ -83,5 +129,5 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Thu, 04 Aug 2016 17:10:04 GMT
+  recorded_at: Fri, 05 Aug 2016 15:22:14 GMT
 recorded_with: VCR 3.0.3
