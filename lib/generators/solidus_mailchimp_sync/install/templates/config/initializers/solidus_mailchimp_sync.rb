@@ -34,3 +34,7 @@ SolidusMailchimpSync.auto_sync_enabled = Rails.env.production?
 # SolidusMailchimpSync::UserSynchronizer.serializer_class_name = "::SolidusMailchimpSync::MyAppCustomerSerializer"
 
 
+# Since Mailchimp API 3.0 doesn't let us update Products, important to wait
+# until product is really ready to sync it the first time. available? is default,
+# but you may want to customize.
+# SolidusMailchimpSync::ProductSynchronizer.only_auto_sync_if = lambda { |p| p.available? }

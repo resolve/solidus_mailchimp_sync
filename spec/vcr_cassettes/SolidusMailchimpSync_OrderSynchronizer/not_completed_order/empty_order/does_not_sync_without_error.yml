@@ -27,11 +27,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 59d2ca89-9546-4588-a4dd-6c207cda9c8b
+      - 0f4ae4e7-b874-4328-b64b-22a006cccede
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:21:48 GMT
+      - Fri, 05 Aug 2016 15:48:04 GMT
       Connection:
       - close
       Set-Cookie:
@@ -41,7 +41,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:48 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:04 GMT
 - request:
     method: put
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org
@@ -73,21 +73,21 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Request-Id:
-      - b8153d92-0892-452f-9041-3906ecfc53cb
+      - 60637b66-b9de-4a61-b25b-fe362ce4ba96
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json>;
         rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:21:48 GMT
+      - Fri, 05 Aug 2016 15:48:04 GMT
       Connection:
       - close
       Set-Cookie:
       - _AVESTA_ENVIRONMENT=prod; path=/
     body:
       encoding: UTF-8
-      string: '{"id":"1-test-order-synchronizer-at-friendsoftheweb.org","email_address":"test-order-synchronizer@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-08-05T15:21:48+00:00","updated_at":"2016-08-05T15:21:48+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"DELETE"}]}'
+      string: '{"id":"1-test-order-synchronizer-at-friendsoftheweb.org","email_address":"test-order-synchronizer@friendsoftheweb.org","opt_in_status":false,"company":"","first_name":"","last_name":"","orders_count":0,"total_spent":0,"address":{"address1":"","address2":"","city":"","province":"","province_code":"","postal_code":"","country":"","country_code":""},"created_at":"2016-08-05T15:48:04+00:00","updated_at":"2016-08-05T15:48:04+00:00","_links":[{"rel":"self","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"parent","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers","method":"GET","targetSchema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Collection.json"},{"rel":"update","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"PATCH","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"upsert","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"PUT","schema":"https://us1.api.mailchimp.com/schema/3.0/Ecommerce/Stores/Customers/Instance.json"},{"rel":"delete","href":"https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org","method":"DELETE"}]}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:48 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:04 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
@@ -115,11 +115,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 3bd0c0fd-f3d1-4957-8112-89454bd77ece
+      - d8348a89-69d2-465e-a3c4-2609c8ab2164
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:21:48 GMT
+      - Fri, 05 Aug 2016 15:48:07 GMT
       Connection:
       - close
       Set-Cookie:
@@ -129,7 +129,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:48 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:07 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/carts/1
@@ -157,11 +157,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - a10be605-7641-419e-9522-a072586ba26b
+      - 560cafdd-8936-4bea-a6fa-82887e4cf089
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:21:48 GMT
+      - Fri, 05 Aug 2016 15:48:07 GMT
       Connection:
       - close
       Set-Cookie:
@@ -171,7 +171,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:48 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:07 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/orders/1
@@ -199,11 +199,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - d18cc438-a282-4a6c-bf66-bcc7b75d8ee6
+      - 0b97d10a-9b68-4602-9a8d-ba6c7ba14605
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:21:49 GMT
+      - Fri, 05 Aug 2016 15:48:07 GMT
       Connection:
       - close
       Set-Cookie:
@@ -213,7 +213,7 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:49 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:07 GMT
 - request:
     method: delete
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/customers/1-test-order-synchronizer-at-friendsoftheweb.org
@@ -241,9 +241,9 @@ http_interactions:
       Content-Length:
       - '0'
       X-Request-Id:
-      - b1a3c608-a47d-4a74-9e55-6e680e804025
+      - 082c3138-70fc-4ec7-9e6d-72a7d5fcf143
       Date:
-      - Fri, 05 Aug 2016 15:21:50 GMT
+      - Fri, 05 Aug 2016 15:48:07 GMT
       Connection:
       - close
       Set-Cookie:
@@ -252,5 +252,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:21:50 GMT
+  recorded_at: Fri, 05 Aug 2016 15:48:07 GMT
 recorded_with: VCR 3.0.3

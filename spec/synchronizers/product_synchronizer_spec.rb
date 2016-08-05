@@ -83,6 +83,20 @@ describe SolidusMailchimpSync::ProductSynchronizer do
             expect(response_variant["visibility"]).to eq("false")
           end
         end
+
+        describe "auto syncing" do
+          it "is not should_sync?" do
+            syncer = SolidusMailchimpSync::ProductSynchronizer.new(product)
+            expect(syncer.should_sync?).to be(false)
+          end
+          it "does not auto_sync" do
+            syncer = SolidusMailchimpSync::ProductSynchronizer.new(product)
+            result = syncer.auto_sync
+            expect(result).to be(nil)
+            error = SolidusMailchimpSync::Mailchimp.ecommerce_request(:get, "/products/#{product.id}", return_errors: true)
+            expect(error.status).to eq(404)
+          end
+        end
       end
     end
 
