@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SolidusMailchimpSync::ProductSynchronizer do
-  let(:product) { create(:product, name: "PRODUCT NAME") }
+  let(:product) { create(:product, name: "PRODUCT NAME") { |p| p.images << create(:image, attachment_updated_at: Time.new(2016, 5, 5, 10, 10, 10)) } }
 
   before do
     delete_if_present("/products/#{product.id}")
@@ -14,9 +14,19 @@ describe SolidusMailchimpSync::ProductSynchronizer do
 
       expect(response["id"]).to eq(product.id.to_s)
       expect(response["title"]).to eq(product.name)
+
+      expected_url = spree.product_url(product, host: Rails.application.routes.default_url_options[:host])
+      expect(response["url"]).to eq(expected_url)
       expect(
         response["variants"].all? do |v|
-          v["url"] == spree.product_path(product, host: Rails.application.routes.default_url_options[:host])
+          v["url"] == expected_url
+        end
+      )
+
+      expect(response["image_url"]).to eq(product.images.first.attachment.url)
+      expect(
+        response["variants"].all? do |v|
+          v["image_url"] == product.images.first.attachment.url
         end
       )
     end

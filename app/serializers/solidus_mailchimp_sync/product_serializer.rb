@@ -13,8 +13,8 @@ module SolidusMailchimpSync
       end
     end
 
-    # We don't include image or url, variants can have those anyway,
-    # and variants are actually editable, do it there.
+    # We have to include image and URL for certain mailchimp features,
+    # although Mailchimp does NOT let us update/edit a sync'd product, grr.
     def as_json
       hash = {
         id: product.id.to_s,
@@ -24,11 +24,31 @@ module SolidusMailchimpSync
         variants: variants_json
       }
 
+      if url = self.url
+        hash[:url] = url
+      end
+
+      if image_url = self.image_url
+        hash[:image_url] = image_url
+      end
+
       if product.available_on
         hash[:published_at_foreign] = product.available_on.iso8601
       end
 
       hash
+    end
+
+    # Override in custom serializer for custom front-end url
+    def url
+      if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:product_url)
+        Spree::Core::Engine.routes.url_helpers.product_url(product, host: Rails.application.routes.default_url_options[:host])
+      end
+    end
+
+    # Override in custom serializer if you want to choose which image different than `first`
+    def image_url
+      product.images.first.try(:attachment).try(:url)
     end
 
     def variants_json

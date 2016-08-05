@@ -40,14 +40,12 @@ module SolidusMailchimpSync
 
     # Override in custom serializer for custom front-end url
     def url
-      if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:product_url)
-        Spree::Core::Engine.routes.url_helpers.product_url(variant.product, host: Rails.application.routes.default_url_options[:host])
-      end
+      product_serializer.url
     end
 
     # Override in custom serializer if you want to choose which image different than `first`
     def image_url
-      (variant.images.first || variant.product.images.first).try(:attachment).try(:url)
+      variant.images.first.try(:attachment).try(:url) || product_serializer.image_url
     end
 
     # Override for custom visibility. Mailchimp wants a string for some reason,
@@ -55,5 +53,10 @@ module SolidusMailchimpSync
     def visibility
       variant.product.available?.to_s
     end
+
+    def product_serializer
+      ::SolidusMailchimpSync::ProductSynchronizer.serializer_class_name.constantize.new(variant.product)
+    end
+
   end
 end
