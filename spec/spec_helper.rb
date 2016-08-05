@@ -41,6 +41,10 @@ VCR.configure do |config|
   config.hook_into :webmock # or :fakeweb
   config.configure_rspec_metadata!
 
+  config.default_cassette_options = {
+    record: ENV['VCR_RECORD'].present? ? ENV['VCR_RECORD'].to_sym : :once
+  }
+
   # Filter out basic auth
   config.filter_sensitive_data('<OMITTED AUTH HEADER>') { Base64.strict_encode64("#{SolidusMailchimpSync::Mailchimp::AUTH_USER}:#{SolidusMailchimpSync.api_key}") }
 
