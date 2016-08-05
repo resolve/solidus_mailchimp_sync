@@ -14,7 +14,7 @@ http_interactions:
       Host:
       - us1.api.mailchimp.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 204
@@ -27,9 +27,9 @@ http_interactions:
       Content-Length:
       - '0'
       X-Request-Id:
-      - 40d3c311-c2ee-49b3-aefd-94a095590eba
+      - 913d8058-41ae-4931-96b1-4683b3f95266
       Date:
-      - Fri, 05 Aug 2016 15:47:21 GMT
+      - Fri, 05 Aug 2016 16:05:10 GMT
       Connection:
       - close
       Set-Cookie:
@@ -38,7 +38,7 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:47:21 GMT
+  recorded_at: Fri, 05 Aug 2016 16:05:10 GMT
 - request:
     method: get
     uri: https://us1.api.mailchimp.com/3.0/ecommerce/stores/dummy-store-id/products/1
@@ -53,7 +53,7 @@ http_interactions:
       Host:
       - us1.api.mailchimp.com
       User-Agent:
-      - http.rb/2.0.2
+      - http.rb/2.0.3
   response:
     status:
       code: 404
@@ -66,11 +66,11 @@ http_interactions:
       Content-Length:
       - '198'
       X-Request-Id:
-      - 01faa177-893a-4361-b6c8-0dc600686b34
+      - 265ca11e-22ac-4157-9452-05d5c6d66aeb
       Link:
       - <https://us1.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
       Date:
-      - Fri, 05 Aug 2016 15:47:21 GMT
+      - Fri, 05 Aug 2016 16:05:10 GMT
       Connection:
       - close
       Set-Cookie:
@@ -80,5 +80,5 @@ http_interactions:
       string: '{"type":"http://developer.mailchimp.com/documentation/mailchimp/guides/error-glossary/","title":"Resource
         Not Found","status":404,"detail":"The requested resource could not be found.","instance":""}'
     http_version: 
-  recorded_at: Fri, 05 Aug 2016 15:47:21 GMT
+  recorded_at: Fri, 05 Aug 2016 16:05:10 GMT
 recorded_with: VCR 3.0.3

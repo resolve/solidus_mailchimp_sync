@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe SolidusMailchimpSync::ProductSynchronizer do
-  let(:product) { create(:product, name: "PRODUCT NAME") { |p| p.images << create(:image, attachment_updated_at: Time.new(2016, 5, 5, 10, 10, 10)) } }
+  let(:product) { create(:product, name: "PRODUCT NAME") { |p| p.images << create(:image, attachment_updated_at: Time.new(2016, 5, 5, 10, 10, 10, "+05:00")) } }
 
   before do
     delete_if_present("/products/#{product.id}")
