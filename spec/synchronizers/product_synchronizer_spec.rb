@@ -31,6 +31,23 @@ describe SolidusMailchimpSync::ProductSynchronizer do
       )
     end
 
+    describe "with variants" do
+      let(:product) { create(:product, name: "PRODUCT NAME") do |p|
+        p.variants << create(:variant)
+        p.variants << create(:variant)
+      end }
+      it "does not sync master variant" do
+        syncer = SolidusMailchimpSync::ProductSynchronizer.new(product)
+        response = syncer.sync
+
+        expect(response["variants"].length).to eq(product.variants.length)
+        product.variants.each do |v|
+          expect(response["variants"].find_all { |vh| vh["id"] == v.id.to_s}.count).to eq(1)
+        end
+        expect(response["variants"].none? { |vh| vh["id"] == product.master.id.to_s }).to be(true)
+      end
+    end
+
     describe "visibility" do
       describe "available" do
         let(:product) { create(:product, available_on: Time.now - 1.week) }

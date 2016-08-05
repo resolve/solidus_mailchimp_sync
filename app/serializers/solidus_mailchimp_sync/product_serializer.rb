@@ -52,8 +52,16 @@ module SolidusMailchimpSync
     end
 
     def variants_json
-      product.variants_including_master.collect do |variant|
+      sellable_variants.collect do |variant|
         VariantSynchronizer.new(variant).serializer.as_json
+      end
+    end
+
+    def sellable_variants
+      if (product.association(:variants).loaded? ? product.variants.length > 0 : product.variants.exists?)
+        product.variants
+      else
+        [product.master]
       end
     end
 
