@@ -42,7 +42,9 @@ module SolidusMailchimpSync
     # Override in custom serializer for custom front-end url
     def url
       if Rails.application.routes.default_url_options[:host] && Spree::Core::Engine.routes.url_helpers.respond_to?(:product_url)
-        Spree::Core::Engine.routes.url_helpers.product_url(product, host: Rails.application.routes.default_url_options[:host])
+        Spree::Core::Engine.routes.url_helpers.product_url(product,
+          host: Rails.application.routes.default_url_options[:host],
+          protocol: Rails.application.config.force_ssl ? "https" : "http")
       end
     end
 
