@@ -34,7 +34,7 @@ describe SolidusMailchimpSync::ProductSynchronizer do
     describe "with variants" do
       let(:product) do
         create(:product, name: "PRODUCT NAME") do |p|
-          2.times { p.variants << create(:variant, product: p) }
+          2.times { |i| p.variants << create(:variant, product: p, sku: "PROD_SYNC_SKU_#{i}") }
         end
       end
 
@@ -44,9 +44,9 @@ describe SolidusMailchimpSync::ProductSynchronizer do
 
         expect(response["variants"].length).to eq(product.variants.length)
         product.variants.each do |v|
-          expect(response["variants"].find_all { |vh| vh["id"] == v.id.to_s}.count).to eq(1)
+          expect(response["variants"].find_all { |vh| vh["sku"] == v.sku}.count).to eq(1)
         end
-        expect(response["variants"].none? { |vh| vh["id"] == product.master.id.to_s }).to be(true)
+        expect(response["variants"].none? { |vh| vh["sku"] == product.master.sku }).to be(true)
       end
     end
 
