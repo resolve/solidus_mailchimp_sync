@@ -33,7 +33,7 @@ module SolidusMailchimpSync
       end
 
       if product.available_on
-        hash[:published_at_foreign] = product.available_on.iso8601
+        hash[:published_at_foreign] = product.available_on.utc.iso8601
       end
 
       hash

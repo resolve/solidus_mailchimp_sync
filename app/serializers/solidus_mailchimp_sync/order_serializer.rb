@@ -32,7 +32,7 @@ module SolidusMailchimpSync
       end
 
       if order.completed_at.present?
-        hash["processed_at_foreign"] =  order.completed_at.iso8601
+        hash["processed_at_foreign"] =  order.completed_at.utc.iso8601
       end
 
       hash["shipping_total"] = shipping_total if shipping_total
