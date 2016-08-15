@@ -1,5 +1,6 @@
 require 'solidus_core'
 require 'solidus_mailchimp_sync/engine'
+require 'solidus_mailchimp_sync/util'
 
 module SolidusMailchimpSync
   mattr_accessor :api_key
