@@ -66,6 +66,29 @@ could take a while:
 
     RAILS_ENV=production rake solidus_mailchimp_sync:bulk_sync
 
+Lower-level tools
+------------------
+
+This gem only synchronizes data with the Mailchimp E-Commerce API, but you
+may find it's methods useful for writing your own code to interact with
+the Mailchimp API.  `SolidusMailchimpSync::Mailchimp.request` can be
+used to make API requests using the configured API key, and raising
+`SolidusMailchimp::Error` objects on failures. And `SolidusMailchimpSync::Util.subscriber_hash`
+can create the ID/key/hash object for a Mailchimp [Member](http://developer.mailchimp.com/documentation/mailchimp/reference/lists/members/) object.
+
+This gem doesn't have any built-in automatic opt-in checkbox, but here is a call
+that could be used to subscribe a user to a Mailchimp list:
+
+~~~ruby
+ SolidusMailchimpSync::Mailchimp.request(
+      :put,
+      "/lists/#{ENV['MAILCHIMP_LIST_ID']}/members/#{SolidusMailchimpSync::Util.subscriber_hash(user.email)}",
+      body: {
+        status: "pending"
+        email_address: user.email
+      })
+~~~
+
 Known issues/To do
 ------------------
 
